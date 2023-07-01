@@ -1,0 +1,27 @@
+
+.todoList{
+    list-style-type: none;
+    margin-bottom: 20px;
+  }
+  
+  .completed {
+    text-decoration: line-through;
+  }
+  
+  .todoText {
+    margin-left: 8px;
+  }
+  
+  .deleteButton {
+    margin-left: 8px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #e53935;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .deleteButton:hover {
+    background-color: #c62828;
+  }

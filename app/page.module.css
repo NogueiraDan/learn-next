@@ -1,8 +1,15 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 2rem;
   min-height: 100vh;
+}
+.sectionLinks{
+  margin-top: 50px;
+  background-color: #c6cbcb;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  min-width: 100vw;
 }

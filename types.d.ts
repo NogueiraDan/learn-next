@@ -21,3 +21,9 @@ type Post = {
   title: string;
   body: string;
 };
+
+type Todo = {
+  id: number;
+  text: string;
+  completed: boolean;
+};
