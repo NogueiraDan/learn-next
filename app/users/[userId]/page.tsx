@@ -17,8 +17,12 @@ type Params = {
 export async function generateMetadata({
   params: { userId },
 }: Params): Promise<Metadata> {
+
+  // Promise pending
   const userData: Promise<User> = getUser(userId);
+  // Promise resolved
   const user: User = await userData;
+  
 
   if (!user.name) {
     return {
@@ -28,16 +32,23 @@ export async function generateMetadata({
 
   return {
     title: user.name,
-    description: `This is the page of ${user.name}`,
+    description: `Esta é a página do usuário ${user.name}`,
   };
 }
 
 export default async function UserPage({ params: { userId } }: Params) {
+  // Pegando dados do usuário
   const userData: Promise<User> = getUser(userId);
+  // Pegando os posts do usuário
   const userPostsData: Promise<Post[]> = getUserPosts(userId);
 
-  //const [user, userPosts] = await Promise.all([userData, userPostsData]);
-  const user = await userData;
+  /*Há dois metodos de enviar os postos para o componente 'UserPosts':
+    1. Enviando a Promise e resolvendo no componente
+    2. Resolvendo a Promise e enviando somente os posts
+  */
+  
+  const [user, userPosts] = await Promise.all([userData, userPostsData]);
+  //const user = await userData;
 
   if(!user.name) return notFound();
 
@@ -48,7 +59,8 @@ export default async function UserPage({ params: { userId } }: Params) {
       <br />
       <br />
       <Suspense fallback={<h2>Loading data...</h2>}>
-        <UserPosts promise={userPostsData} />
+        {/* <UserPosts promise={userPostsData} /> */}
+        <UserPosts userPosts={userPosts} />
       </Suspense>
     </main>
   );

@@ -22,8 +22,15 @@ type Post = {
   body: string;
 };
 
+// type Todo = {
+//   id: number;
+//   text: string;
+//   completed: boolean;
+// };
+
 type Todo = {
-  id: number;
-  text: string;
-  completed: boolean;
-};
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean,
+}

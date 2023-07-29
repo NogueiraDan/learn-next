@@ -1,0 +1,25 @@
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.formFeedback {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  input {
+    height: 50px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 20px;
+  }
+
+  button{
+    height: 50px;
+    margin-top: 30px;
+  }
+}

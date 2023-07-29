@@ -9,6 +9,7 @@ export default function Home() {
       <Link href="/about">Go to About</Link>
       <Link href="/users">Go to Users</Link>
       <Link href="/todo">Go to Todos</Link>
+      <Link href="/feedback">Go to Feedback</Link>
       </section>
     </main>
   );

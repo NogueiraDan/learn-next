@@ -1,13 +1,16 @@
+// type Props = {
+//   promise: Promise<Post[]>;
+// };
 
 type Props = {
-  promise: Promise<Post[]>;
-};
+  userPosts: Post[]
+}
 
-export default async function UserPosts({ promise }: Props) {
-  // resolvendo a promise props
-  const posts = await promise;
+export default async function UserPosts({ userPosts }: Props) {
+  // Resolvendo a promise props, enviada no segundo metodo.
+  //const posts = await promise;
 
-  const content = posts.map((post) => {
+  const content = userPosts.map((post) => {
     return (
       <article key={post.id}>
         <h2>{post.title}</h2>

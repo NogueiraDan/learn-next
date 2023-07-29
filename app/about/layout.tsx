@@ -7,7 +7,7 @@ export default function AboutLayout({
 }) {
   return (
     <>
-      <nav>About NavBar</nav>
+      <nav>NavBar on about layout</nav>
       <main className={styles.main}>{children}</main>
     </>
   );
